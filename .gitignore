@@ -1,0 +1,6 @@
+# Logs
+*.log
+logs/
+
+# IDEs and Editors
+.idea/
