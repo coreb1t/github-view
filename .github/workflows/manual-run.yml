@@ -1,0 +1,22 @@
+name: Manual Workflow Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Deployment environment (e.g., staging, production)"
+        required: true
+        default: "production"
+      message:
+        description: "Optional custom message"
+        required: false
+
+jobs:
+  manual-run-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Inputs
+        run: |
+          echo "Environment: ${{ github.event.inputs.environment }}"
+          echo "Message: ${{ github.event.inputs.message }}"
